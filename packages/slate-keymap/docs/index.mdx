@@ -1,0 +1,37 @@
+---
+name: Slate Keymap
+route: /plugins/slate-keymap
+menu: Plugins
+---
+
+# Slate Keymap
+
+A plugin for simplifying keyboard shortcuts with SlateJS. `slate-keymap` uses
+`is-hotkey` under the hood to check if an event matches the configured keys.
+
+## Install
+
+```sh
+yarn add @convertkit/slate-keymap
+```
+
+## Usage
+
+`Keymap(object: Object, options: Object)`
+
+### Example
+
+```javascript
+import Keymap from "@convertkit/slate-keymap";
+
+const plugins = [
+  Keymap({
+    "mod+a": (event, editor) => editor.selectAll()
+  })
+];
+```
+
+### Options
+
+- `if`: A function that is passed the `editor` instance. If it returns true,
+  then the Keymap is active. Defaults to `() => true`
