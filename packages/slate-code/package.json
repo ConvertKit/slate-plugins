@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A plugin for handling code in the ConvertKit Editor",
   "main": "src/index.js",
   "module": "es/index.js",
@@ -26,7 +26,7 @@
     "styles.css"
   ],
   "dependencies": {
-    "@convertkit/slate-keymap": "^0.0.2",
+    "@convertkit/slate-keymap": "^0.0.3",
     "prismjs": "^1.15.0"
   }
 }

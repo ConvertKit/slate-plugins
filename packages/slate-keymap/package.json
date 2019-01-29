@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-keymap",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Slate plugin to simplify keyboard shortcuts",
   "main": "src/index.js",
   "module": "es/index.js",
