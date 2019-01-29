@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.docz/
+/packages/*/es
+/packages/*/umd
+/packages/*/index.js
+/packages/*/lib
+/packages/*/styles.css
