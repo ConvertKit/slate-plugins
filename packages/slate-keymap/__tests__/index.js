@@ -1,12 +1,12 @@
 import KeyMap from "../src";
-import { keyDown } from "../../../shared/slate-test/keyboard-events";
+import { events } from "../../../shared/slate-test";
 
 describe("KeyMap", () => {
   it("should call a function when the key is pressed", () => {
     const enterFn = jest.fn();
     const keyMap = KeyMap({ enter: enterFn });
 
-    keyMap.onKeyDown(keyDown({ key: "Enter" }), {}, jest.fn());
+    keyMap.onKeyDown(events.keyDown({ key: "Enter" }), {}, jest.fn());
 
     expect(enterFn).toHaveBeenCalled();
   });
@@ -15,7 +15,11 @@ describe("KeyMap", () => {
     const shiftEnterFn = jest.fn();
     const keyMap = KeyMap({ "shift+enter": shiftEnterFn });
 
-    keyMap.onKeyDown(keyDown({ key: "Enter", shiftKey: true }), {}, jest.fn());
+    keyMap.onKeyDown(
+      events.keyDown({ key: "Enter", shiftKey: true }),
+      {},
+      jest.fn()
+    );
 
     expect(shiftEnterFn).toHaveBeenCalled();
   });
@@ -24,7 +28,7 @@ describe("KeyMap", () => {
     const next = jest.fn();
     const keyMap = KeyMap({});
 
-    keyMap.onKeyDown(keyDown({ key: "Enter" }), {}, next);
+    keyMap.onKeyDown(events.keyDown({ key: "Enter" }), {}, next);
 
     expect(next).toHaveBeenCalled();
   });
@@ -33,7 +37,7 @@ describe("KeyMap", () => {
     const enterFn = jest.fn();
     const keyMap = KeyMap({ enter: enterFn }, { if: () => true });
 
-    keyMap.onKeyDown(keyDown({ key: "Enter" }), {}, jest.fn());
+    keyMap.onKeyDown(events.keyDown({ key: "Enter" }), {}, jest.fn());
     expect(enterFn).toHaveBeenCalled();
   });
 
@@ -41,7 +45,7 @@ describe("KeyMap", () => {
     const enterFn = jest.fn();
     const keyMap = KeyMap({ enter: enterFn }, { if: () => false });
 
-    keyMap.onKeyDown(keyDown({ key: "Enter" }), {}, jest.fn());
+    keyMap.onKeyDown(events.keyDown({ key: "Enter" }), {}, jest.fn());
     expect(enterFn).not.toHaveBeenCalled();
   });
 });

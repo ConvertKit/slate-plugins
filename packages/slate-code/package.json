@@ -1,7 +1,7 @@
 {
-  "name": "@convertkit/slate-keymap",
-  "version": "0.0.2",
-  "description": "A Slate plugin to simplify keyboard shortcuts",
+  "name": "@convertkit/slate-code",
+  "version": "0.0.1",
+  "description": "A plugin for handling code in the ConvertKit Editor",
   "main": "src/index.js",
   "module": "es/index.js",
   "scripts": {
@@ -22,9 +22,11 @@
     "es",
     "src",
     "lib",
-    "index.js"
+    "index.js",
+    "styles.css"
   ],
   "dependencies": {
-    "is-hotkey": "^0.1.4"
+    "@convertkit/slate-keymap": "^0.0.2",
+    "prismjs": "^1.15.0"
   }
 }

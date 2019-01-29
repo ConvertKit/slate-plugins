@@ -1,0 +1,10 @@
+.code {
+  position: relative;
+  background: #f7f9fa;
+  border: 1px solid #e6e8eb;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 13px;
+  overflow: auto;
+  padding: 8px;
+  white-space: pre;
+}

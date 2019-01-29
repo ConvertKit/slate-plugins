@@ -1,0 +1,47 @@
+---
+name: Slate Code
+menu: Plugins
+route: /plugins/slate-code
+---
+
+import { Playground, PropsTable } from "docz";
+import Editor from "./test-editor";
+
+# Editor Code
+
+A plugin for code blocks in SlateJS.
+
+## Try It Out
+
+<Editor />
+
+## Install
+
+```bash
+yarn add @convertkit/slate-code
+```
+
+## Usage
+
+```jsx
+...
+import { Editor } from "slate-react";
+import Code from "@convertkit/slate-code"
+
+const plugins = [Code({
+  highlight: true,
+  block: "code",
+  line: "code-line",
+  classNames: {
+    block: "code",
+    line: "code-line"
+  }
+})]
+
+const MyEditor = (props) => (
+  <Editor
+    ...
+    plugins={plugins}
+  />
+)
+```
