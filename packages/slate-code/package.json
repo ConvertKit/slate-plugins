@@ -4,6 +4,10 @@
   "description": "A plugin for handling code in the ConvertKit Editor",
   "main": "src/index.js",
   "module": "es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConvertKit/slate-plugins.git"
+  },
   "scripts": {
     "test": "jest --config ../../jest.config.js",
     "lint": "eslint . --max-warnings=0",
