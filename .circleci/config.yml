@@ -2,9 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9.10.0
+      - image: circleci/node:10.6.0
     working_directory: ~/repo
-    resource_class: large
     steps:
       - checkout
       - restore_cache:
