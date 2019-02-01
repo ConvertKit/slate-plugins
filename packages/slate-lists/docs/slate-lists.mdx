@@ -1,0 +1,48 @@
+---
+name: Slate Lists
+menu: Plugins
+route: /plugins/slate-lists
+---
+
+import { Playground, PropsTable } from "docz";
+import Editor from "./test-editor";
+
+# Slate Lists
+
+A plugin for lists in SlateJS.
+
+## Try It Out
+
+<Editor />
+
+## Install
+
+```bash
+yarn add @convertkit/slate-lists
+```
+
+## Usage
+
+```jsx
+...
+import { Editor } from "slate-react";
+import Lists from "@convertkit/slate-lists"
+
+const plugins = [Lists({
+  ordered_list: "ordered-list",
+  unordered_list: "unordered-list",
+  list_item: "list-item",
+  classNames: {
+    ordered_list: "ordered-list",
+    unordered_list: "unordered-list",
+    list_item: "list-item"
+  }
+})]
+
+const MyEditor = (props) => (
+  <Editor
+    ...
+    plugins={plugins}
+  />
+)
+```
