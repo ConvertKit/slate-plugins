@@ -11,7 +11,7 @@ export default ({ blocks }) => {
       [blocks.ordered_list]: {
         nodes: [
           {
-            match: { object: [blocks.list_item] }
+            match: { type: blocks.list_item }
           }
         ]
       },
@@ -20,7 +20,17 @@ export default ({ blocks }) => {
           { type: blocks.unordered_list },
           { type: blocks.ordered_list }
         ],
+        nodes: [
+          {
+            match: [
+              { type: blocks.list_item_child },
+              { type: blocks.unordered_list },
+              { type: blocks.ordered_list }
+            ]
+          }
+        ],
         normalize: (editor, error) => {
+          console.log("Error", error.code);
           switch (error.code) {
             case "parent_type_invalid":
               editor.wrapBlock(blocks.unordered_list);
