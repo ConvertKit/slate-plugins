@@ -6,7 +6,9 @@ export default (
     <document>
       <paragraph>Edit the list below:</paragraph>
       <unordered_list>
-        <list_item>Item</list_item>
+        <list_item>
+          <list_item_child>Test</list_item_child>
+        </list_item>
       </unordered_list>
     </document>
   </value>
