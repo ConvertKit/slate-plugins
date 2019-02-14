@@ -1,13 +1,9 @@
 {
-  "name": "@convertkit/slate-code",
-  "version": "0.0.3",
-  "description": "A plugin for handling code in the ConvertKit Editor",
+  "name": "@convertkit/slate-testing-library",
+  "version": "0.0.1",
+  "description": "A library to help with testing Slate editors",
   "main": "src/index.js",
   "module": "es/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ConvertKit/slate-plugins.git"
-  },
   "scripts": {
     "test": "jest --config ../../jest.config.js",
     "lint": "eslint . --max-warnings=0",
@@ -26,14 +22,11 @@
     "es",
     "src",
     "lib",
-    "index.js",
-    "styles.css"
+    "index.js"
   ],
-  "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.1"
-  },
   "dependencies": {
-    "@convertkit/slate-keymap": "^0.0.3",
-    "prismjs": "^1.15.0"
+    "jest-diff": "^24.0.0",
+    "slate-hyperprint": "^2.3.0",
+    "slate-hyperscript": "^0.11.25"
   }
 }

@@ -1,34 +1,31 @@
+---
+name: Slate Testing Library
+route: /slate-testing-library
+---
+
+# Slate Testing Library
+
+**Note: This library is experimental and may change. There are also missing features (like all events besides `keyDown`).**
+
+A library to help with writing tests for SlateJS editors.
+
+## Install
+
+```sh
+yarn add -D @convertkit/slate-testing-library
+```
+
+## Usage
+
+The other packages in this repo use `slate-testing-library`. Check them out for more examples.
+Here's one from `@convertkit/slate-code`
+
+```
 /** @jsx h */
 import h from "../../../shared/hyperscript";
 import SlateTest, { createEvent } from "@convertkit/slate-testing-library";
 
 import Code from "../src";
-import print from "slate-hyperprint";
-
-describe("insertCode", () => {
-  it("should insert a code block", () => {
-    const { editor, createValue } = SlateTest({ plugins: Code() });
-
-    editor.setValue(
-      createValue(
-        <paragraph>
-          <cursor />
-        </paragraph>
-      )
-    );
-
-    const expected = createValue([
-      <paragraph />,
-      <code>
-        <code_line>{"<h1>Heading</h1>"}</code_line>
-      </code>
-    ]);
-
-    editor.insertCode({ code: "<h1>Heading</h1>" });
-
-    expect(editor.value.toJSON()).toEqual(expected.toJSON());
-  });
-});
 
 describe("mod+a", () => {
   it("should select the code Block", () => {
@@ -66,3 +63,4 @@ describe("mod+a", () => {
     );
   });
 });
+```
