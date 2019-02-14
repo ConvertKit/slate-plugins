@@ -8,15 +8,16 @@ const Keymap = (shortcuts, options) => {
 
   const functions = Object.keys(shortcuts).map(key => {
     const isKeyPressed = isHotkey(key);
+    const command = shortcuts[key];
 
     const check = (event, editor) => isKeyPressed(event) && config.if(editor);
 
     const handler =
-      typeof shortcuts[key] == "string"
+      typeof command == "string"
         ? (event, editor) => {
-            editor.command(shortcuts[key]);
+            editor.command(command);
           }
-        : shortcuts[key];
+        : command;
 
     return {
       check,
