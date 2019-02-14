@@ -53,6 +53,15 @@ export default (options = {}) => {
     event.preventDefault();
     if (selection.isExpanded) editor.delete();
     if (selection.start.offset === 0) {
+      const listItem = getListItem(editor, editor.value.startBlock);
+      const list = getList(editor, listItem);
+      const parentListItem = getListItem(editor, list);
+
+      if (parentListItem) {
+        editor.decreaseListItemDepth();
+        return;
+      }
+
       editor.unwrapList();
       return;
     }
