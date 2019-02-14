@@ -11,9 +11,16 @@ const Keymap = (shortcuts, options) => {
 
     const check = (event, editor) => isKeyPressed(event) && config.if(editor);
 
+    const handler =
+      typeof shortcuts[key] == "string"
+        ? (event, editor) => {
+            editor.command(shortcuts[key]);
+          }
+        : shortcuts[key];
+
     return {
       check,
-      handler: shortcuts[key]
+      handler
     };
   });
 
