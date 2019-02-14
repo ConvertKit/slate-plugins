@@ -11,6 +11,19 @@ describe("KeyMap", () => {
     expect(enterFn).toHaveBeenCalled();
   });
 
+  it("should call editor.command if the argument is a string", () => {
+    const command = jest.fn();
+    const keyMap = KeyMap({ "shift+enter": "softBreak" });
+
+    keyMap.onKeyDown(
+      events.keyDown({ key: "Enter", shiftKey: true }),
+      { command },
+      jest.fn()
+    );
+
+    expect(command).toHaveBeenCalledWith("softBreak");
+  });
+
   it("should handle modifiers", () => {
     const shiftEnterFn = jest.fn();
     const keyMap = KeyMap({ "shift+enter": shiftEnterFn });

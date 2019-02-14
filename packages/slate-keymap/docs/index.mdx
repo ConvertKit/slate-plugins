@@ -26,7 +26,9 @@ import Keymap from "@convertkit/slate-keymap";
 
 const plugins = [
   Keymap({
-    "mod+a": (event, editor) => editor.selectAll()
+    "mod+a": (event, editor) => editor.selectAll(),
+    // You can also pass a string and it will call the command with that name
+    "shift+enter": "softBreak"
   })
 ];
 ```
