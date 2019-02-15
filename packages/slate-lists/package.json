@@ -29,6 +29,9 @@
     "index.js",
     "styles.css"
   ],
+  "devDependencies": {
+    "@convertkit/slate-testing-library": "^0.0.1"
+  },
   "dependencies": {
     "@convertkit/slate-keymap": "^0.0.3"
   }

@@ -16,7 +16,7 @@ describe("KeyMap", () => {
     const keyMap = KeyMap({ "shift+enter": "softBreak" });
 
     keyMap.onKeyDown(
-      events.keyDown({ key: "Enter", shiftKey: true }),
+      createEvent.keyDown({ key: "Enter", shiftKey: true }),
       { command },
       jest.fn()
     );

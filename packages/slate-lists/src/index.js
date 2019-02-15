@@ -90,12 +90,8 @@ export default (options = {}) => {
   return [
     {
       commands: {
-        insertList(editor, key) {
-          const block = editor.value.document.getNode(key);
-
-          console.log("block", block.nodes.size);
-
-          editor.insertNodeByKey(block.key, block.nodes.size, {
+        insertList(editor) {
+          editor.insertBlock({
             object: "block",
             type: blocks.unordered_list,
             nodes: [

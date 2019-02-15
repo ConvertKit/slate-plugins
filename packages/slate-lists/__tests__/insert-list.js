@@ -1,6 +1,6 @@
 /** @jsx h */
 import h from "../../../shared/hyperscript";
-import SlateTest, { events } from "../../../shared/slate-test";
+import SlateTest from "@convertkit/slate-testing-library";
 
 import Lists from "../src";
 
@@ -20,7 +20,9 @@ describe("insertList", () => {
       <paragraph />,
       <unordered_list>
         <list_item>
-          <cursor />
+          <list_item_child>
+            <cursor />
+          </list_item_child>
         </list_item>
       </unordered_list>
     ]);
