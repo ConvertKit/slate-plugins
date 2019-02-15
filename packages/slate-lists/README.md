@@ -1,6 +1,6 @@
 # Slate Lists
 
-A plugin for lists in SlateJS.
+Adds list editing behaviors to a SlateJS editor.
 
 ## Install
 

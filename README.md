@@ -12,6 +12,10 @@ Adds code block editing behaviors to a SlateJS editor.
 
 A convenient way to handle keyboard events in a SlateJS editor.
 
+### [slate-lists](https://convertkit-slate-plugins.netlify.com/plugins/slate-lists)
+
+Adds list editing behaviors to a SlateJS editor.
+
 ## Other
 
 ### [slate-testing-library](https://convertkit-slate-plugins.netlify.com/plugins/slate-testing-library)

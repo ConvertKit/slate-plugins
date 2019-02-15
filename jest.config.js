@@ -1,3 +1,4 @@
 module.exports = {
-  roots: ["packages/"]
+  roots: ["packages/"],
+  transformIgnorePatterns: ["/node_modules/(?!@convertkit).+\\.js$"]
 };
