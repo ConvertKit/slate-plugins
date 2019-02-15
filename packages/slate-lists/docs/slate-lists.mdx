@@ -11,6 +11,13 @@ import Editor from "./test-editor";
 
 A plugin for lists in SlateJS.
 
+**Keybindings**
+
+- `Enter`: insert new list item
+- `Tab`: increase the depth of an item
+- `Shift+Tab`: decrease the depth of an item
+- `Delete` or `Backspace` at the start of an item: remove the item
+
 ## Try It Out
 
 <Editor />
@@ -29,9 +36,11 @@ import { Editor } from "slate-react";
 import Lists from "@convertkit/slate-lists"
 
 const plugins = [Lists({
-  ordered_list: "ordered-list",
-  unordered_list: "unordered-list",
-  list_item: "list-item",
+  blocks: {
+    ordered_list: "ordered-list",
+    unordered_list: "unordered-list",
+    list_item: "list-item",
+  },
   classNames: {
     ordered_list: "ordered-list",
     unordered_list: "unordered-list",
