@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-testing-library",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A library to help with testing Slate editors",
   "main": "src/index.js",
   "module": "es/index.js",
