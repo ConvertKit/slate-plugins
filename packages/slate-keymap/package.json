@@ -29,5 +29,6 @@
   },
   "dependencies": {
     "is-hotkey": "^0.1.4"
-  }
+  },
+  "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac"
 }

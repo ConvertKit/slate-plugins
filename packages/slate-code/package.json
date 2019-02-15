@@ -35,5 +35,6 @@
   "dependencies": {
     "@convertkit/slate-keymap": "^0.1.1",
     "prismjs": "^1.15.0"
-  }
+  },
+  "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac"
 }
