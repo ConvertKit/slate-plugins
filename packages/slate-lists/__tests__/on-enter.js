@@ -1,6 +1,6 @@
 /** @jsx h */
 import h from "../../../shared/hyperscript";
-import SlateTest, { events } from "../../../shared/slate-test";
+import SlateTest, { createEvent } from "@convertkit/slate-testing-library";
 
 import Lists from "../src";
 
@@ -12,7 +12,9 @@ describe("onEnter", () => {
       createValue(
         <unordered_list>
           <list_item>
-            <cursor />
+            <list_item_child>
+              <cursor />
+            </list_item_child>
           </list_item>
         </unordered_list>
       )
@@ -24,7 +26,7 @@ describe("onEnter", () => {
       </paragraph>
     );
 
-    editor.run("onKeyDown", events.keyDown({ key: "Enter" }));
+    editor.run("onKeyDown", createEvent.keyDown({ key: "Enter" }));
 
     expect(editor.value).toMatchSlateValue(expected);
   });
@@ -35,9 +37,13 @@ describe("onEnter", () => {
     editor.setValue(
       createValue(
         <unordered_list>
-          <list_item>Item</list_item>
           <list_item>
-            <cursor />
+            <list_item_child>Item</list_item_child>
+          </list_item>
+          <list_item>
+            <list_item_child>
+              <cursor />
+            </list_item_child>
           </list_item>
         </unordered_list>
       )
@@ -45,14 +51,16 @@ describe("onEnter", () => {
 
     const expected = createValue([
       <unordered_list>
-        <list_item>Item</list_item>
+        <list_item>
+          <list_item_child>Item</list_item_child>
+        </list_item>
       </unordered_list>,
       <paragraph>
         <cursor />
       </paragraph>
     ]);
 
-    editor.run("onKeyDown", events.keyDown({ key: "Enter" }));
+    editor.run("onKeyDown", createEvent.keyDown({ key: "Enter" }));
 
     expect(editor.value).toMatchSlateValue(expected);
   });

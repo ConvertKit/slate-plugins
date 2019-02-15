@@ -34,7 +34,7 @@ expect.extend({
     const pass = this.equals(received.toJSON(), expected.toJSON());
 
     const message = () =>
-      `Difference:\n${diff(receivedDocument, expectedDocument)}`;
+      `Difference:\n${diff(expectedDocument, receivedDocument)}`;
     return { actual: received, message, pass };
   }
 });
