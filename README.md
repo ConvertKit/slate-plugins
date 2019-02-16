@@ -1,5 +1,7 @@
 # ConvertKit Slate Plugins
 
+![](https://img.shields.io/circleci/project/github/ConvertKit/slate-plugins/master.svg?style=flat)
+
 A collection of plugins for [SlateJS](https://docs.slatejs.org/), a customizable framework for building rich text editors.
 
 ## Plugins

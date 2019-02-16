@@ -1,10 +1,6 @@
----
-name: Slate Keymap
-route: /plugins/slate-keymap
-menu: Plugins
----
-
 # Slate Keymap
+
+![](https://img.shields.io/circleci/project/github/ConvertKit/slate-plugins/master.svg?style=flat)
 
 A plugin for simplifying keyboard shortcuts with SlateJS. `slate-keymap` uses
 `is-hotkey` under the hood to check if an event matches the configured keys.

@@ -1,5 +1,7 @@
 # Slate Code
 
+![](https://img.shields.io/circleci/project/github/ConvertKit/slate-plugins/master.svg?style=flat)
+
 A plugin for code blocks in SlateJS.
 
 ## Install
