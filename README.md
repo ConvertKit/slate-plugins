@@ -20,7 +20,7 @@ Adds list editing behaviors to a SlateJS editor.
 
 ## Other
 
-### [slate-testing-library](https://convertkit-slate-plugins.netlify.com/plugins/slate-testing-library)
+### [slate-testing-library](https://convertkit-slate-plugins.netlify.com/slate-testing-library)
 
 A library for testing SlateJS editors.
 
