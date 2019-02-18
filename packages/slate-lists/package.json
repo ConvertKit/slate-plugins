@@ -2,16 +2,16 @@
   "name": "@convertkit/slate-lists",
   "version": "0.0.2",
   "description": "A plugin for handling lists in a Slate editor",
-  "main": "src/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ConvertKit/slate-plugins.git"
   },
   "scripts": {
-    "test": "jest --config ../../jest.config.js",
+    "test": "library test",
     "lint": "eslint . --max-warnings=0",
-    "build": "rollup src/index.js --config ../../rollup.config.js"
+    "build": "library build"
   },
   "author": "",
   "license": "MIT",
@@ -30,7 +30,8 @@
     "styles.css"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.3"
+    "library-cli": "^0.0.2",
+    "@convertkit/slate-testing-library": "^0.0.2"
   },
   "dependencies": {
     "@convertkit/slate-keymap": "^0.0.3"
