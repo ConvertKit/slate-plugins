@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-lists",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A plugin for handling lists in a Slate editor",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -30,8 +30,8 @@
     "styles.css"
   ],
   "devDependencies": {
-    "library-cli": "^0.0.2",
-    "@convertkit/slate-testing-library": "^0.0.2"
+    "@convertkit/slate-testing-library": "^0.0.2",
+    "library-cli": "^0.0.2"
   },
   "dependencies": {
     "@convertkit/slate-keymap": "^0.0.3"
