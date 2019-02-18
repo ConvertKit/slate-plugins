@@ -63,6 +63,7 @@ export default (options = {}) => {
       }
 
       editor.unwrapList();
+
       return;
     }
 
@@ -178,11 +179,32 @@ export default (options = {}) => {
         },
         unwrapList(editor) {
           const listItem = getListItem(editor, editor.value.startBlock);
-          const listType = editor.value.document.getParent(listItem.key).type;
+          const list = getList(editor, listItem);
+
           editor.withoutNormalizing(() => {
-            editor.setBlocks(blocks.default);
-            editor.unwrapBlock(blocks.list_item);
-            editor.unwrapBlock(listType);
+            // TODO: Handle range selected
+
+            editor.unwrapNodeByKey(listItem.key);
+
+            const parent = editor.value.document.getParent(listItem.key);
+
+            let itemIndex = parent.nodes.findIndex(
+              node => node.key === listItem.key
+            );
+
+            listItem.nodes.forEach((itemChild, index) => {
+              editor.moveNodeByKey(
+                itemChild.key,
+                parent.key,
+                index + itemIndex
+              );
+
+              if (itemChild.type == blocks.list_item_child) {
+                editor.setNodeByKey(itemChild.key, { type: blocks.default });
+              }
+            });
+
+            editor.removeNodeByKey(listItem.key);
           });
         }
       },

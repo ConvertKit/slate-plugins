@@ -5,6 +5,8 @@ lerna-debug.log*
 .docz/
 /packages/*/es
 /packages/*/umd
+/packages/*/dist
+/packages/*/coverage
 /packages/*/index.js
 /packages/*/lib
 /packages/*/styles.css
