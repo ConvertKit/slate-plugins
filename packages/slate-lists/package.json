@@ -23,7 +23,7 @@
     "slate-react": "^0.21.0"
   },
   "files": [
-    "es",
+    "dist",
     "src",
     "lib",
     "index.js",
@@ -34,7 +34,7 @@
     "library-cli": "^0.0.2"
   },
   "dependencies": {
-    "@convertkit/slate-keymap": "^0.0.3"
+    "@convertkit/slate-keymap": "^0.1.2"
   },
   "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac"
 }

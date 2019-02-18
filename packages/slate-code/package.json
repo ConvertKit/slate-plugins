@@ -23,9 +23,8 @@
     "slate-react": "^0.21.0"
   },
   "files": [
-    "es",
+    "dist",
     "src",
-    "lib",
     "index.js",
     "styles.css"
   ],
