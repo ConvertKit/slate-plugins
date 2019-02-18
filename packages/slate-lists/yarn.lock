@@ -667,17 +667,17 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@convertkit/slate-keymap@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@convertkit/slate-keymap/-/slate-keymap-0.1.2.tgz#75b6848887d3fe4af412d1a72cd3be2b78a3d4a1"
-  integrity sha512-vzLkBfKERpcsRgCGvYwYJHyprWIPk9IkJBbpl10R55LoH4cBIVn0la01fkYFWArndOjBSUr5Yar+PC2PBCW9Kg==
+"@convertkit/slate-keymap@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@convertkit/slate-keymap/-/slate-keymap-0.1.3.tgz#6d9b5fc98d41a60e03436e8eadcb9360a6ef9ea3"
+  integrity sha512-CGqqLAkrJ94xIQaJnoAtWC6ON55Ex/gP70ks7AeMHzljc3ejncKAtF8ZNYjpxoebktvYt2w5W20LPBHRfEr/pw==
   dependencies:
     is-hotkey "^0.1.4"
 
-"@convertkit/slate-testing-library@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@convertkit/slate-testing-library/-/slate-testing-library-0.0.4.tgz#85c5cde264d5cddb08c307a1cdd5f8a4df90027b"
-  integrity sha512-UGukffJ1NRhXmfD5D58ESfYwEUU3kscDxMWlQ/InM5VwsNdqX721VkENAXEORqQ888PdrsY0qEioP7MN6YUJVQ==
+"@convertkit/slate-testing-library@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@convertkit/slate-testing-library/-/slate-testing-library-0.0.5.tgz#53f7ed9a8fe27201b45fa1f20525e5095e80722c"
+  integrity sha512-MO78ASnLJQJNR0f28G6WXx0gJyGXZpgnG0fyLP5BKGNs2Nh4f0R4AzTz+4xG+/7UhxVA3t8r7RfKCYYLtfvklQ==
   dependencies:
     jest-diff "^24.0.0"
     slate-hyperprint "^2.3.0"
