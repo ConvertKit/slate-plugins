@@ -2,12 +2,12 @@
   "name": "@convertkit/slate-keymap",
   "version": "0.1.2",
   "description": "A Slate plugin to simplify keyboard shortcuts",
-  "main": "src/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "test": "jest --config ../../jest.config.js",
+    "test": "library test",
     "lint": "eslint . --max-warnings=0",
-    "build": "rollup src/index.js --config ../../rollup.config.js"
+    "build": "library build"
   },
   "author": "",
   "license": "MIT",
@@ -25,7 +25,8 @@
     "index.js"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.4"
+    "@convertkit/slate-testing-library": "^0.0.4",
+    "library-cli": "^0.0.2"
   },
   "dependencies": {
     "is-hotkey": "^0.1.4"
