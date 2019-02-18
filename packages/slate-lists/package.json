@@ -30,7 +30,7 @@
     "styles.css"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.2",
+    "@convertkit/slate-testing-library": "^0.0.4",
     "library-cli": "^0.0.2"
   },
   "dependencies": {
