@@ -2,12 +2,12 @@
   "name": "@convertkit/slate-testing-library",
   "version": "0.0.4",
   "description": "A library to help with testing Slate editors",
-  "main": "src/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "test": "jest --config ../../jest.config.js",
+    "test": "library test",
     "lint": "eslint . --max-warnings=0",
-    "build": "rollup src/index.js --config ../../rollup.config.js"
+    "build": "library build"
   },
   "author": "",
   "license": "MIT",
@@ -29,5 +29,8 @@
     "slate-hyperprint": "^2.3.0",
     "slate-hyperscript": "^0.11.25"
   },
-  "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac"
+  "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac",
+  "devDependencies": {
+    "library-cli": "^0.0.2"
+  }
 }
