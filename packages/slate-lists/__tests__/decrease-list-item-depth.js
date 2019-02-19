@@ -78,4 +78,60 @@ describe("decreaseListItemDepth", () => {
 
     expect(editor.value).toMatchSlateValue(expected);
   });
+
+  it("should decrease the indent of children", () => {
+    const { editor, createValue } = SlateTest({ plugins: Lists() });
+
+    editor.setValue(
+      createValue(
+        <unordered_list>
+          <list_item>
+            <list_item_child>Test 1</list_item_child>
+            <unordered_list>
+              <list_item>
+                <list_item_child>
+                  <cursor />
+                  Test 2
+                </list_item_child>
+                <unordered_list>
+                  <list_item>
+                    <list_item_child>Test 2</list_item_child>
+                  </list_item>
+                </unordered_list>
+              </list_item>
+            </unordered_list>
+          </list_item>
+          <list_item>
+            <list_item_child>Other Item</list_item_child>
+          </list_item>
+        </unordered_list>
+      )
+    );
+
+    const expected = createValue(
+      <unordered_list>
+        <list_item>
+          <list_item_child>Test 1</list_item_child>
+        </list_item>
+        <list_item>
+          <list_item_child>
+            <cursor />
+            Test 2
+          </list_item_child>
+          <unordered_list>
+            <list_item>
+              <list_item_child>Test 2</list_item_child>
+            </list_item>
+          </unordered_list>
+        </list_item>
+        <list_item>
+          <list_item_child>Other Item</list_item_child>
+        </list_item>
+      </unordered_list>
+    );
+
+    editor.decreaseListItemDepth();
+
+    expect(editor.value).toMatchSlateValue(expected);
+  });
 });

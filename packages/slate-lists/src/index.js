@@ -117,6 +117,8 @@ export default (options = {}) => {
           if (!parentListItem) return;
           const parentList = getList(editor, parentListItem);
 
+          const index = parentList.nodes.indexOf(parentListItem);
+
           const otherItems = list.nodes
             .skipUntil(item => item === listItem)
             .rest();
@@ -134,11 +136,7 @@ export default (options = {}) => {
                 newList
               );
 
-              editor.moveNodeByKey(
-                listItem.key,
-                parentList.key,
-                parentList.nodes.indexOf(parentListItem) + 1
-              );
+              editor.moveNodeByKey(listItem.key, parentList.key, index + 1);
 
               otherItems.forEach((item, index) =>
                 editor.moveNodeByKey(
@@ -149,11 +147,7 @@ export default (options = {}) => {
               );
             });
           } else {
-            editor.moveNodeByKey(
-              listItem.key,
-              parentList.key,
-              parentList.nodes.size
-            );
+            editor.moveNodeByKey(listItem.key, parentList.key, index + 1);
           }
         },
         increaseListItemDepth(editor) {
