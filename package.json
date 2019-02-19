@@ -53,6 +53,6 @@
     "docz-theme-default": "^0.13.7",
     "eslint-plugin-flowtype": "^3.4.2",
     "lerna": "^3.13.0",
-    "webpack": "4.29.5"
+    "webpack": "4.28.4"
   }
 }
