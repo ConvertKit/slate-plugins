@@ -49,6 +49,22 @@ export default (options = {}) => {
     return isList(possibleList) ? possibleList : null;
   };
 
+  const onBackspace = (event, editor, next) => {
+    const { selection } = editor.value;
+    if (selection.isExpanded) return next();
+    if (selection.start.offset !== 0) return next();
+    const listItem = getListItem(editor, editor.value.startBlock);
+    const list = getList(editor, listItem);
+    const parentListItem = getListItem(editor, list);
+
+    if (parentListItem) {
+      editor.decreaseListItemDepth();
+      return;
+    }
+
+    editor.unwrapList();
+  };
+
   const onEnter = (event, editor, next) => {
     const { selection } = editor.value;
     event.preventDefault();
@@ -240,6 +256,7 @@ export default (options = {}) => {
 
     KeyMap(
       {
+        backspace: onBackspace,
         enter: onEnter,
         tab: onTab,
         "shift+tab": onShiftTab
