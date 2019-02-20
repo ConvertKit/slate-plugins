@@ -30,7 +30,6 @@ export default ({ blocks }) => {
           }
         ],
         normalize: (editor, error) => {
-          console.log("Error", error.code);
           switch (error.code) {
             case "parent_type_invalid":
               editor.wrapBlock(blocks.unordered_list);

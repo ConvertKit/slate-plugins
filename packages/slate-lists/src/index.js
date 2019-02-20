@@ -41,7 +41,7 @@ export default (options = {}) => {
 
   const isList = block =>
     block &&
-    (block.type == blocks.unordered_list || block.type == block.ordered_list);
+    (block.type == blocks.unordered_list || block.type == blocks.ordered_list);
 
   const getList = (editor, block) => {
     const possibleList = editor.value.document.getParent(block.key);
@@ -91,10 +91,12 @@ export default (options = {}) => {
   return [
     {
       commands: {
-        insertList(editor) {
+        insertList(editor, options = {}) {
+          const type = options.type || blocks.unordered_list;
+
           editor.insertBlock({
             object: "block",
-            type: blocks.unordered_list,
+            type,
             nodes: [
               {
                 object: "block",
@@ -153,13 +155,14 @@ export default (options = {}) => {
         increaseListItemDepth(editor) {
           const listItem = getListItem(editor, editor.value.startBlock);
           const previousListItem = getPreviousListItem(editor);
+          const list = getList(editor, listItem);
 
           if (!listItem) return;
           if (!previousListItem) return;
 
           const newList = Block.create({
             object: "block",
-            type: blocks.unordered_list
+            type: list.type
           });
 
           editor.withoutNormalizing(() => {

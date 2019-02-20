@@ -1,16 +1,24 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
 import Editor from "../../../shared/test-editor";
 import Lists from "../src";
 import value from "./test-value";
 
 const plugins = [Lists()];
 
-export default class TestEditor extends Component {
-  render() {
-    return (
-      <div>
-        <Editor plugins={plugins} initialValue={value} />
-      </div>
-    );
-  }
-}
+const TestEditor = () => {
+  const editor = useRef(null);
+
+  const insertList = event => {
+    event.preventDefault();
+    editor.current.insertList();
+  };
+
+  return (
+    <div>
+      <button onMouseDown={insertList}>insertList</button>
+      <Editor ref={editor} plugins={plugins} initialValue={value} />
+    </div>
+  );
+};
+
+export default TestEditor;

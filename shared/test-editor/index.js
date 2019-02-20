@@ -1,29 +1,26 @@
-import React, { Component } from "react";
+import React, { useState, useMemo } from "react";
 import { Editor } from "slate-react";
 import { Value } from "slate";
 
-export default class TestEditor extends Component {
-  constructor(props) {
-    super(props);
-    this.plugins = props.plugins;
-    this.state = {
-      value: Value.fromJSON(props.initialValue)
+const TestEditor = React.forwardRef(
+  ({ plugins, initialValue, ...props }, ref) => {
+    const memoPlugins = useMemo(() => plugins);
+    const [value, setValue] = useState(() => Value.fromJSON(initialValue));
+
+    const handleChange = ({ value }) => {
+      setValue(value);
     };
-  }
 
-  handleChange = ({ value }) => {
-    this.setState({ value });
-  };
-
-  render() {
-    const { plugins, ...props } = this.props;
     return (
       <Editor
-        plugins={this.plugins}
-        value={this.state.value}
-        onChange={this.handleChange}
+        ref={ref}
+        plugins={memoPlugins}
+        value={value}
+        onChange={handleChange}
         {...props}
       />
     );
   }
-}
+);
+
+export default TestEditor;
