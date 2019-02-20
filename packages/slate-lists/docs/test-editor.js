@@ -8,14 +8,14 @@ const plugins = [Lists()];
 const TestEditor = () => {
   const editor = useRef(null);
 
-  const insertList = event => {
+  const wrapList = event => {
     event.preventDefault();
-    editor.current.insertList();
+    editor.current.wrapList();
   };
 
   return (
     <div>
-      <button onMouseDown={insertList}>insertList</button>
+      <button onMouseDown={wrapList}>wrapList</button>
       <Editor ref={editor} plugins={plugins} initialValue={value} />
     </div>
   );

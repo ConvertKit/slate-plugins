@@ -2,6 +2,7 @@ import React from "react";
 import { Block } from "slate";
 import KeyMap from "@convertkit/slate-keymap";
 import createSchema from "./create-schema";
+import { getRootSelectionBlocks } from "./utils";
 
 export default (options = {}) => {
   const config = {
@@ -91,24 +92,16 @@ export default (options = {}) => {
   return [
     {
       commands: {
-        insertList(editor, options = {}) {
+        wrapList(editor, options = {}) {
           const type = options.type || blocks.unordered_list;
+          const rootBlocks = getRootSelectionBlocks(editor);
 
-          editor.insertBlock({
-            object: "block",
-            type,
-            nodes: [
-              {
-                object: "block",
-                type: blocks.list_item,
-                nodes: [
-                  {
-                    object: "block",
-                    type: blocks.list_item_child
-                  }
-                ]
-              }
-            ]
+          editor.withoutNormalizing(() => {
+            editor.wrapBlock(type);
+            rootBlocks.forEach(block => {
+              editor.wrapBlockByKey(block.key, blocks.list_item);
+              editor.setNodeByKey(block.key, blocks.list_item_child);
+            });
           });
         },
         decreaseListItemDepth(editor) {

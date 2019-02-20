@@ -4,7 +4,7 @@ import SlateTest from "@convertkit/slate-testing-library";
 
 import Lists from "../src";
 
-describe("insertList", () => {
+describe("wrapList", () => {
   it("should insert an unordered list by default", () => {
     const { editor, createValue } = SlateTest({ plugins: Lists() });
 
@@ -16,8 +16,7 @@ describe("insertList", () => {
       )
     );
 
-    const expected = createValue([
-      <paragraph />,
+    const expected = createValue(
       <unordered_list>
         <list_item>
           <list_item_child>
@@ -25,9 +24,9 @@ describe("insertList", () => {
           </list_item_child>
         </list_item>
       </unordered_list>
-    ]);
+    );
 
-    editor.insertList();
+    editor.wrapList();
 
     expect(editor.value).toMatchSlateValue(expected);
   });
@@ -43,8 +42,7 @@ describe("insertList", () => {
       )
     );
 
-    const expected = createValue([
-      <paragraph />,
+    const expected = createValue(
       <unordered_list>
         <list_item>
           <list_item_child>
@@ -52,9 +50,9 @@ describe("insertList", () => {
           </list_item_child>
         </list_item>
       </unordered_list>
-    ]);
+    );
 
-    editor.insertList({ type: "unordered-list" });
+    editor.wrapList({ type: "unordered-list" });
 
     expect(editor.value).toMatchSlateValue(expected);
   });
@@ -70,8 +68,7 @@ describe("insertList", () => {
       )
     );
 
-    const expected = createValue([
-      <paragraph />,
+    const expected = createValue(
       <unordered_list>
         <list_item>
           <list_item_child>
@@ -79,9 +76,9 @@ describe("insertList", () => {
           </list_item_child>
         </list_item>
       </unordered_list>
-    ]);
+    );
 
-    editor.insertList({ type: "unordered-list" });
+    editor.wrapList({ type: "unordered-list" });
 
     expect(editor.value).toMatchSlateValue(expected);
   });
