@@ -31,6 +31,11 @@ export default ({ blocks }) => {
         ],
         normalize: (editor, error) => {
           switch (error.code) {
+            case "child_type_invalid":
+              editor.wrapBlockByKey(error.child.key, {
+                type: blocks.list_item_child
+              });
+              return;
             case "parent_type_invalid":
               editor.wrapBlock(blocks.unordered_list);
               return;
