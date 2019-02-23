@@ -1,0 +1,35 @@
+{
+  "name": "@convertkit/slate-htm",
+  "version": "0.0.1",
+  "description": "A JSX-like syntax for creating Slate Values",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "test": "library test",
+    "lint": "eslint . --max-warnings=0",
+    "build": "library build"
+  },
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "immutable": "^3.8.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "slate": "^0.44.0",
+    "slate-react": "^0.21.0"
+  },
+  "files": [
+    "dist",
+    "src",
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "htm": "^2.0.0",
+    "slate-hyperscript": "^0.11.25"
+  },
+  "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac",
+  "devDependencies": {
+    "library-cli": "^0.0.2"
+  }
+}
