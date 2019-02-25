@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-code",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A plugin for handling code in the ConvertKit Editor",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -29,11 +29,11 @@
     "styles.css"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.6",
+    "@convertkit/slate-testing-library": "^0.0.7",
     "library-cli": "^0.0.2"
   },
   "dependencies": {
-    "@convertkit/slate-keymap": "^0.1.4",
+    "@convertkit/slate-keymap": "^0.1.5",
     "prismjs": "^1.15.0"
   },
   "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac"
