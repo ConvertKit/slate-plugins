@@ -2,6 +2,8 @@
 
 ![](https://img.shields.io/circleci/project/github/ConvertKit/slate-plugins/master.svg?style=flat)
 
+[View on Github](https://github.com/ConvertKit/slate-plugins)
+
 A plugin for simplifying keyboard shortcuts with SlateJS. `slate-keymap` uses
 `is-hotkey` under the hood to check if an event matches the configured keys.
 
