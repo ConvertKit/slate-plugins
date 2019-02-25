@@ -25,9 +25,9 @@ export default ({ blocks, classNames }) => (props, editor, next) => {
     }
     case blocks.list_item_child: {
       return (
-        <span className={classNames.list_item_child} {...props.attributes}>
+        <div className={classNames.list_item_child} {...props.attributes}>
           {props.children}
-        </span>
+        </div>
       );
     }
     default:
