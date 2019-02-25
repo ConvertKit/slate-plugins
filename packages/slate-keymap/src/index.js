@@ -15,6 +15,7 @@ const Keymap = (shortcuts, options) => {
     const handler =
       typeof command == "string"
         ? (event, editor) => {
+            event.preventDefault();
             editor.command(command);
           }
         : command;

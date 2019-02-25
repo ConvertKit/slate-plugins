@@ -22,8 +22,11 @@ export default ({ blocks }) => {
         ],
         nodes: [
           {
+            match: { type: blocks.list_item_child },
+            min: 1
+          },
+          {
             match: [
-              { type: blocks.list_item_child },
               { type: blocks.unordered_list },
               { type: blocks.ordered_list }
             ]
@@ -31,6 +34,11 @@ export default ({ blocks }) => {
         ],
         normalize: (editor, error) => {
           switch (error.code) {
+            case "child_min_invalid":
+              editor.insertNodeByKey(error.node.key, 0, {
+                object: "block",
+                type: blocks.list_item_child
+              });
             case "child_type_invalid":
               editor.wrapBlockByKey(error.child.key, {
                 type: blocks.list_item_child
