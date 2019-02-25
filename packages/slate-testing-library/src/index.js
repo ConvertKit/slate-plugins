@@ -1,21 +1,24 @@
 /** @jsx h */
 import { Editor } from "slate";
-import { createHyperscript } from "slate-hyperscript";
 import hyperprint from "slate-hyperprint";
 import events from "./events";
+import { createHTM } from "@convertkit/slate-htm";
+import { createHyperscript } from "slate-hyperscript";
 import diff from "jest-diff";
 
 const h = createHyperscript({});
+const html = createHTM({});
 
 const SlateTest = options => {
   // Create a value that is normalized using the same options as the editor.
   const createValue = children => {
     const editor = new Editor(options);
-    const value = (
+    const value = html`
       <value>
-        <document>{children}</document>
+        <document>${children}</document>
       </value>
-    );
+    `;
+
     editor.setValue(value);
     return editor.value;
   };

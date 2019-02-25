@@ -1,8 +1,8 @@
-import React from "react";
-import { Block } from "slate";
 import KeyMap from "@convertkit/slate-keymap";
+import createCommands from "./create-commands";
+import createNormalizeNode from "./create-normalize-node";
+import createRenderNode from "./create-render-node";
 import createSchema from "./create-schema";
-import { getRootSelectionBlocks } from "./utils";
 
 export default (options = {}) => {
   const config = {
@@ -26,11 +26,7 @@ export default (options = {}) => {
     ...config.classNames
   };
 
-  const getPreviousListItem = editor => {
-    return editor.value.document.getPreviousSibling(
-      getListItem(editor, editor.value.startBlock).key
-    );
-  };
+  const commands = createCommands({ blocks });
 
   const isListItem = block => block && block.type == blocks.list_item;
 
@@ -66,10 +62,10 @@ export default (options = {}) => {
   };
 
   const onEnter = (event, editor, next) => {
-    const { selection } = editor.value;
+    const { selection, startBlock } = editor.value;
     event.preventDefault();
     if (selection.isExpanded) editor.delete();
-    if (selection.start.offset === 0) {
+    if (selection.start.offset === 0 && startBlock.getText() === "") {
       const listItem = getListItem(editor, editor.value.startBlock);
       const list = getList(editor, listItem);
       const parentListItem = getListItem(editor, list);
@@ -93,164 +89,21 @@ export default (options = {}) => {
     );
   };
 
-  const onTab = (event, editor, next) => {
-    event.preventDefault();
-    editor.increaseListItemDepth();
-  };
-
-  const onShiftTab = (event, editor, next) => {
-    event.preventDefault();
-    editor.decreaseListItemDepth();
-  };
-
   const schema = createSchema({ blocks });
+  const normalizeNode = createNormalizeNode({ blocks });
+  const renderNode = createRenderNode({ blocks, classNames });
 
   return [
     {
       commands: {
-        wrapList(editor, options = {}) {
-          const type = options.type || blocks.unordered_list;
-          const rootBlocks = getRootSelectionBlocks(editor);
-
-          editor.withoutNormalizing(() => {
-            editor.wrapBlock(type);
-            rootBlocks.forEach(block => {
-              editor.wrapBlockByKey(block.key, blocks.list_item);
-              editor.setNodeByKey(block.key, blocks.list_item_child);
-            });
-          });
-        },
-        decreaseListItemDepth(editor) {
-          const { value } = editor;
-          const listItem = getListItem(editor, value.startBlock);
-          const list = getList(editor, listItem);
-          const parentListItem = getListItem(editor, list);
-          if (!parentListItem) return;
-          const parentList = getList(editor, parentListItem);
-
-          const index = parentList.nodes.indexOf(parentListItem);
-
-          const otherItems = list.nodes
-            .skipUntil(item => item === listItem)
-            .rest();
-
-          if (!otherItems.isEmpty()) {
-            const newList = Block.create({
-              object: "block",
-              type: list.type
-            });
-
-            editor.withoutNormalizing(() => {
-              editor.insertNodeByKey(
-                listItem.key,
-                listItem.nodes.size,
-                newList
-              );
-
-              editor.moveNodeByKey(listItem.key, parentList.key, index + 1);
-
-              otherItems.forEach((item, index) =>
-                editor.moveNodeByKey(
-                  item.key,
-                  newList.key,
-                  newList.nodes.size + index
-                )
-              );
-            });
-          } else {
-            editor.moveNodeByKey(listItem.key, parentList.key, index + 1);
-          }
-        },
-        increaseListItemDepth(editor) {
-          const listItem = getListItem(editor, editor.value.startBlock);
-          const previousListItem = getPreviousListItem(editor);
-          const list = getList(editor, listItem);
-
-          if (!listItem) return;
-          if (!previousListItem) return;
-
-          const newList = Block.create({
-            object: "block",
-            type: list.type
-          });
-
-          editor.withoutNormalizing(() => {
-            editor.insertNodeByKey(
-              previousListItem.key,
-              previousListItem.nodes.size,
-              newList
-            );
-            editor.moveNodeByKey(listItem.key, newList.key, 0);
-          });
-        },
-        unwrapList(editor) {
-          const listItem = getListItem(editor, editor.value.startBlock);
-          const list = getList(editor, listItem);
-
-          editor.withoutNormalizing(() => {
-            // TODO: Handle range selected
-
-            editor.unwrapNodeByKey(listItem.key);
-
-            const parent = editor.value.document.getParent(listItem.key);
-
-            let itemIndex = parent.nodes.findIndex(
-              node => node.key === listItem.key
-            );
-
-            listItem.nodes.forEach((itemChild, index) => {
-              editor.moveNodeByKey(
-                itemChild.key,
-                parent.key,
-                index + itemIndex
-              );
-
-              if (itemChild.type == blocks.list_item_child) {
-                editor.setNodeByKey(itemChild.key, { type: blocks.default });
-              }
-            });
-
-            editor.removeNodeByKey(listItem.key);
-          });
-        }
+        wrapList: commands.wrapList,
+        unwrapList: commands.unwrapList,
+        toggleList: commands.toggleList,
+        decreaseListItemDepth: commands.decreaseListItemDepth,
+        increaseListItemDepth: commands.increaseListItemDepth
       },
-      renderNode(props, editor, next) {
-        const { node } = props;
-        switch (node.type) {
-          case blocks.unordered_list:
-            return (
-              <ul className={classNames.unordered_list} {...props.attributes}>
-                {props.children}
-              </ul>
-            );
-          case blocks.ordered_list: {
-            return (
-              <ol className={classNames.ordered_list} {...props.attributes}>
-                {props.children}
-              </ol>
-            );
-          }
-          case blocks.list_item: {
-            return (
-              <li className={classNames.list_item} {...props.attributes}>
-                {props.children}
-              </li>
-            );
-          }
-          case blocks.list_item_child: {
-            return (
-              <span
-                className={classNames.list_item_child}
-                {...props.attributes}
-              >
-                {props.children}
-              </span>
-            );
-          }
-          default:
-            return next();
-        }
-      },
+      normalizeNode,
+      renderNode,
       schema
     },
 
@@ -258,8 +111,8 @@ export default (options = {}) => {
       {
         backspace: onBackspace,
         enter: onEnter,
-        tab: onTab,
-        "shift+tab": onShiftTab
+        tab: "increaseListItemDepth",
+        "shift+tab": "decreaseListItemDepth"
       },
       { if: editor => !!getListItem(editor, editor.value.startBlock) }
     )

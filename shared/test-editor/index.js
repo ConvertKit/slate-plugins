@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Editor } from "slate-react";
 import { Value } from "slate";
+import "./index.css";
 
 const TestEditor = React.forwardRef(
   ({ plugins, initialValue, ...props }, ref) => {
@@ -11,6 +12,10 @@ const TestEditor = React.forwardRef(
       setValue(value);
     };
 
+    const className = props.className
+      ? `${props.className} test-editor`
+      : "test-editor";
+
     return (
       <Editor
         ref={ref}
@@ -18,6 +23,7 @@ const TestEditor = React.forwardRef(
         value={value}
         onChange={handleChange}
         {...props}
+        className={className}
       />
     );
   }

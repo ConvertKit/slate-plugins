@@ -2030,6 +2030,11 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
   integrity sha512-7T/BxH19zbcCTa8XkMlbK5lTo1WtgkFi3GvdWEyNuc4Vex7/9Dqbnpsf4JMydcfj9HCg4zUWFTL3Za6lapg5/w==
 
+htm@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/htm/-/htm-2.0.0.tgz#49f43728074b67be7a2fed996b8f069c030e3762"
+  integrity sha512-87XIGDvPnS0YcbQag5ES2xAH55q3QRA93YABCavDtMhV5TNQxcdpDkjMZvboBs8uW73Yy4I7Xnp8mrtBgQW/9A==
+
 html-encoding-sniffer@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/html-encoding-sniffer/-/html-encoding-sniffer-1.0.2.tgz#e70d84b94da53aa375e11fe3a351be6642ca46f8"
