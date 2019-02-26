@@ -5,7 +5,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna clean",
-    "test": "lerna exec -- yarn test",
+    "test": "lerna run test",
     "build:docs": "yarn bootstrap && yarn build && yarn docz build",
     "build:changed": "lerna run build --parallel --since origin/master",
     "build": "lerna run build",

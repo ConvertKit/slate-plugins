@@ -23,13 +23,16 @@ export default ({ blocks }) => {
         nodes: [
           {
             match: { type: blocks.list_item_child },
-            min: 1
+            min: 1,
+            max: 1
           },
           {
             match: [
               { type: blocks.unordered_list },
               { type: blocks.ordered_list }
-            ]
+            ],
+            min: 0,
+            max: 1
           }
         ],
         normalize: (editor, error) => {
