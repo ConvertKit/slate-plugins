@@ -89,6 +89,11 @@ export default (options = {}) => {
     );
   };
 
+  const onShiftEnter = (event, editor, next) => {
+    event.preventDefault();
+    editor.insertText("\n");
+  };
+
   const schema = createSchema({ blocks });
   const normalizeNode = createNormalizeNode({ blocks });
   const renderNode = createRenderNode({ blocks, classNames });
@@ -111,6 +116,7 @@ export default (options = {}) => {
       {
         backspace: onBackspace,
         enter: onEnter,
+        "shift+enter": onShiftEnter,
         tab: "increaseListItemDepth",
         "shift+tab": "decreaseListItemDepth"
       },
