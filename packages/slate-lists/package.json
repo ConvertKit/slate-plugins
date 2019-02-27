@@ -31,7 +31,7 @@
   ],
   "devDependencies": {
     "@convertkit/slate-testing-library": "^0.0.7",
-    "library-cli": "^0.0.2"
+    "library-cli": "0.0.3"
   },
   "dependencies": {
     "@convertkit/slate-keymap": "^0.1.5"
