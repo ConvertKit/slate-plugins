@@ -33,6 +33,6 @@
   },
   "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac",
   "devDependencies": {
-    "library-cli": "^0.0.2"
+    "library-cli": "0.0.3"
   }
 }
