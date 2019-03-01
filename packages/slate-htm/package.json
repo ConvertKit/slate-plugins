@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-htm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A JSX-like syntax for creating Slate Values",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
