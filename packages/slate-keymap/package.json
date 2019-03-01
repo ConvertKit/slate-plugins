@@ -25,8 +25,7 @@
     "index.js"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.7",
-    "library-cli": "0.0.3"
+    "@convertkit/slate-testing-library": "file:./../slate-testing-library"
   },
   "dependencies": {
     "is-hotkey": "^0.1.4"

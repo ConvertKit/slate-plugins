@@ -28,8 +28,5 @@
     "htm": "^2.0.0",
     "slate-hyperscript": "^0.11.25"
   },
-  "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac",
-  "devDependencies": {
-    "library-cli": "0.0.3"
-  }
+  "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac"
 }
