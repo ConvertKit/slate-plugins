@@ -29,11 +29,10 @@
     "styles.css"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.7",
-    "library-cli": "0.0.3"
+    "@convertkit/slate-testing-library": "file:../slate-testing-library"
   },
   "dependencies": {
-    "@convertkit/slate-keymap": "^0.1.5",
+    "@convertkit/slate-keymap": "file:../slate-keymap",
     "prismjs": "^1.15.0"
   },
   "gitHead": "132cc883904abfa7f09e757e4d42a4727ba042ac"
