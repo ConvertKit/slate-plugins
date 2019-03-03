@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-code",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A plugin for handling code in the ConvertKit Editor",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
