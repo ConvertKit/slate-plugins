@@ -1220,35 +1220,26 @@
     to-fast-properties "^2.0.0"
 
 "@convertkit/slate-code@file:packages/slate-code":
-  version "0.0.9"
+  version "0.0.10"
   dependencies:
-    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-code-0.0.9-da66846b-9cf9-4704-a91d-e264262e8291-1551445485435/node_modules/@convertkit/slate-keymap"
+    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-code-0.0.10-7ebfa63c-dcde-44c6-9985-a6261addf82f-1551638355040/node_modules/@convertkit/slate-keymap"
     prismjs "^1.15.0"
 
 "@convertkit/slate-htm@file:packages/slate-htm":
-  version "0.0.2"
+  version "0.0.3"
   dependencies:
     htm "^2.0.0"
     slate-hyperscript "^0.11.25"
 
 "@convertkit/slate-keymap@file:packages/slate-keymap":
-  version "0.1.5"
+  version "0.1.6"
   dependencies:
     is-hotkey "^0.1.4"
 
 "@convertkit/slate-lists@file:packages/slate-lists":
-  version "0.1.0"
+  version "0.2.0"
   dependencies:
-    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-lists-0.1.0-b5db083e-908d-4eed-b37c-21243d4e14d1-1551445485448/node_modules/@convertkit/slate-keymap"
-
-"@convertkit/slate-testing-library@file:packages/slate-testing-library":
-  version "0.0.7"
-  dependencies:
-    "@convertkit/slate-htm" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-testing-library-0.0.7-4f158789-7aa9-4da9-a49a-460ccc70b055-1551445485449/node_modules/@convertkit/slate-htm"
-    htm "^2.0.0"
-    jest-diff "^24.0.0"
-    slate-hyperprint "^2.3.0"
-    slate-hyperscript "^0.11.25"
+    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-lists-0.2.0-f85b9d35-31c0-4743-a090-8cab0a80830a-1551638355052/node_modules/@convertkit/slate-keymap"
 
 "@emotion/cache@10.0.0":
   version "10.0.0"
@@ -6673,11 +6664,6 @@ get-document@1:
   resolved "https://registry.yarnpkg.com/get-document/-/get-document-1.0.0.tgz#4821bce66f1c24cb0331602be6cb6b12c4f01c4b"
   integrity sha1-SCG85m8cJMsDMWAr5strEsTwHEs=
 
-get-own-enumerable-property-symbols@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.0.tgz#b877b49a5c16aefac3655f2ed2ea5b684df8d203"
-  integrity sha512-CIJYJC4GGF06TakLg8z4GQKvDsx9EMspVxOYih7LerEL/WosUnFIww45CGfxfeKHqlg3twgUrYRT1O3WQqjGCg==
-
 get-pkg-repo@^1.0.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/get-pkg-repo/-/get-pkg-repo-1.4.0.tgz#c73b489c06d80cc5536c2c853f9e05232056972d"
@@ -7551,7 +7537,7 @@ indent-string@^2.1.0:
   dependencies:
     repeating "^2.0.0"
 
-indent-string@^3.0.0, indent-string@^3.2.0:
+indent-string@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289"
   integrity sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok=
@@ -7963,7 +7949,7 @@ is-number@^3.0.0:
   dependencies:
     kind-of "^3.0.2"
 
-is-obj@^1.0.0, is-obj@^1.0.1:
+is-obj@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
   integrity sha1-PkcprB9f3gJc19g6iW2rn09n2w8=
@@ -8015,11 +8001,6 @@ is-regex@^1.0.4:
   integrity sha1-VRdIm1RwkbCTDglWVM7SXul+lJE=
   dependencies:
     has "^1.0.1"
-
-is-regexp@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
-  integrity sha1-/S2INUXEa6xaYz57mgnof6LLUGk=
 
 is-resolvable@^1.0.0:
   version "1.1.0"
@@ -11530,11 +11511,6 @@ prepend-http@^1.0.1:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-prettier@1.13.6:
-  version "1.13.6"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.6.tgz#00ae0b777ad92f81a9e7a1df2f0470b6dab0cb44"
-  integrity sha512-p5eqCNiohWZN++7aJXUVj0JgLqHCPLf9GLIcLBHGNWs4Y9FJOPs6+KNO2WT0udJIQJTbeZFrJkjzjcb8fkAYYQ==
-
 prettier@^1.14.2, prettier@^1.15.3:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.1.tgz#534c2c9d7853f8845e5e078384e71973bd74089f"
@@ -13352,18 +13328,6 @@ slate-hotkeys@^0.2.8:
     is-hotkey "0.1.4"
     slate-dev-environment "^0.2.1"
 
-slate-hyperprint@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/slate-hyperprint/-/slate-hyperprint-2.3.0.tgz#f3de4b3d4686f86e1ab299842f251a9718184c73"
-  integrity sha512-YpfIZlkCSDjr5A4I7qDh99cdBItc7OViL9H0w7DLgHVPlSU5Kwu9TmmoPJQ7Fc5UnSzDJXCt1WCBIC92uE97Qw==
-  dependencies:
-    indent-string "^3.2.0"
-    is-plain-object "^2.0.4"
-    js-yaml "^3.12.0"
-    meow "^5.0.0"
-    prettier "1.13.6"
-    stringify-object "^3.2.2"
-
 slate-hyperscript@^0.11.25:
   version "0.11.25"
   resolved "https://registry.yarnpkg.com/slate-hyperscript/-/slate-hyperscript-0.11.25.tgz#7feab73a9c4afb5b91ce6932c3a952996e40d756"
@@ -13888,15 +13852,6 @@ stringify-entities@^1.0.1:
     character-entities-legacy "^1.0.0"
     is-alphanumerical "^1.0.0"
     is-hexadecimal "^1.0.0"
-
-stringify-object@^3.2.2:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/stringify-object/-/stringify-object-3.3.0.tgz#703065aefca19300d3ce88af4f5b3956d7556629"
-  integrity sha512-rHqiFh1elqCQ9WPLIC8I0Q/g/wj5J1eMkyoiD6eoQApWHP0FtlK7rqnhmabL5VUY9JQCcqwwvlOaSuutekgyrw==
-  dependencies:
-    get-own-enumerable-property-symbols "^3.0.0"
-    is-obj "^1.0.1"
-    is-regexp "^1.0.0"
 
 strip-ansi@3.0.1, strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
