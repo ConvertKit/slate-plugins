@@ -27,6 +27,9 @@ yarn add @convertkit/slate-code
 
 ## Usage
 
+The plugin will add a new first-class method to the editor (see [commands](https://docs.slatejs.org/slate-core/plugins#commands) on Slate docs).
+This allows you to trigger the creation of a code block through a key-down event as follows:
+
 ```jsx
 ...
 import { Editor } from "slate-react";
@@ -42,10 +45,26 @@ const plugins = [Code({
   }
 })]
 
+function handleKeyDown(event, editor, next) {
+  if (event.ctrlKey) {
+    switch (event.key) {
+      case 'y':
+        event.preventDefault();
+        editor.insertCode({ code: '<h1>Heading 1</h1>'});
+        break;
+      default:
+        return next();
+    }
+  }
+}
+
 const MyEditor = (props) => (
   <Editor
     ...
+    onKeyDown={handleKeyDown}
     plugins={plugins}
   />
 )
 ```
+
+This is a simple example that will create an empty code block with the `CTRL + y` combination.
