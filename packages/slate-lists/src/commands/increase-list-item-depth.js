@@ -9,17 +9,31 @@ export default ({ blocks }, editor) => {
   if (!listItem) return;
   if (!previousListItem) return;
 
-  const newList = Block.create({
-    object: "block",
-    type: list.type
-  });
+  // Because of our schema constraints, we know that the second item must be a
+  // list if it exists.
+  const existingList = previousListItem.nodes.get(1);
 
-  editor.withoutNormalizing(() => {
-    editor.insertNodeByKey(
-      previousListItem.key,
-      previousListItem.nodes.size,
-      newList
-    );
-    editor.moveNodeByKey(listItem.key, newList.key, 0);
-  });
+  if (existingList) {
+    editor.withoutNormalizing(() => {
+      editor.moveNodeByKey(
+        listItem.key,
+        existingList.key,
+        existingList.nodes.size
+      );
+    });
+  } else {
+    const newList = Block.create({
+      object: "block",
+      type: list.type
+    });
+
+    editor.withoutNormalizing(() => {
+      editor.insertNodeByKey(
+        previousListItem.key,
+        previousListItem.nodes.size,
+        newList
+      );
+      editor.moveNodeByKey(listItem.key, newList.key, 0);
+    });
+  }
 };
