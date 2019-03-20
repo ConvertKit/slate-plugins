@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@convertkit/slate-code": "file:packages/slate-code",
-    "@convertkit/slate-htm": "file:packages/slate-htm",
+    "@convertkit/slate-htm": "^0.0.3",
     "@convertkit/slate-keymap": "file:packages/slate-keymap",
     "@convertkit/slate-lists": "file:packages/slate-lists",
     "@convertkit/slate-testing-library": "file:packages/slate-testing-library",
@@ -34,6 +34,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@reach/visually-hidden": "^0.1.2",
+    "@emotion/core": "^10.0.6",
+    "emotion-theming": "^10.0.6",
     "docz": "^0.13.7",
     "docz-plugin-css": "^0.11.0",
     "docz-theme-default": "^0.13.7",
