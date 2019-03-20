@@ -38,7 +38,7 @@
     "slate": "^0.44.12",
     "slate-react": "^0.21.18",
     "style-loader": "^0.23.1",
-    "webpack": "4.29.6"
+    "webpack": "4.28.4"
   },
   "devDependencies": {}
 }
