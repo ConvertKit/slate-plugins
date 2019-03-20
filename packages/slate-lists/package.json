@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-lists",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A plugin for handling lists in a Slate editor",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
