@@ -6,7 +6,7 @@
     "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna clean",
     "test": "lerna run test --stream --parallel",
-    "build:docs": "lerna link && yarn build && yarn docz build",
+    "build:docs": "yarn build && yarn link && yarn docz build",
     "build:changed": "lerna run build --parallel --since origin/master",
     "build": "lerna run build",
     "lint": "lerna run lint",
