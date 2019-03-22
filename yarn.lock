@@ -1016,7 +1016,7 @@
 "@convertkit/slate-code@file:packages/slate-code":
   version "0.0.12"
   dependencies:
-    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-code-0.0.12-efd54d73-dd60-40be-a5a6-9c0066cf390c-1553105999573/node_modules/@convertkit/slate-keymap"
+    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-code-0.0.12-4a7a9d0d-1794-4c56-bd4e-627fb245a558-1553118316899/node_modules/@convertkit/slate-keymap"
     prismjs "^1.15.0"
 
 "@convertkit/slate-htm@file:packages/slate-htm":
@@ -1033,12 +1033,12 @@
 "@convertkit/slate-lists@file:packages/slate-lists":
   version "0.2.2"
   dependencies:
-    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-lists-0.2.2-cf4fe0d2-19e9-45e3-b22c-cec75eecba2c-1553105999841/node_modules/@convertkit/slate-keymap"
+    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-lists-0.2.2-226553d2-0461-4bbd-a418-b19763f48743-1553118316914/node_modules/@convertkit/slate-keymap"
 
 "@convertkit/slate-testing-library@file:packages/slate-testing-library":
   version "0.0.8"
   dependencies:
-    "@convertkit/slate-htm" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-testing-library-0.0.8-0882c6bc-464d-43d4-a86d-99e141c0accd-1553105999845/node_modules/@convertkit/slate-htm"
+    "@convertkit/slate-htm" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-testing-library-0.0.8-3b5139b4-a54d-4724-8d35-8183dcf9265d-1553118316915/node_modules/@convertkit/slate-htm"
     htm "^2.0.0"
     jest-diff "^24.0.0"
     slate-hyperprint "^2.3.0"
@@ -2728,15 +2728,15 @@ acorn-walk@^6.0.1, acorn-walk@^6.1.1:
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-6.1.1.tgz#d363b66f5fac5f018ff9c3a1e7b6f8e310cc3913"
   integrity sha512-OtUw6JUTgxA2QoqqmrmQ7F2NYqiBPi/L2jqHyFtllhOUvXYQXf0Z1CYUinIfyT4bTCGmrA7gX9FvHA81uzCoVw==
 
+acorn@6.1.1, acorn@^6.0.1, acorn@^6.0.5, acorn@^6.0.7, acorn@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
+  integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
+
 acorn@^5.0.0, acorn@^5.0.3, acorn@^5.5.3, acorn@^5.6.2:
   version "5.7.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
   integrity sha512-T/zvzYRfbVojPWahDsE5evJdHb3oJoQfFbsrKM7w5Zcs++Tr257tia3BmMP8XYVjp1S9RZXQMh7gao96BlqZOw==
-
-acorn@^6.0.1, acorn@^6.0.5, acorn@^6.0.7, acorn@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
-  integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
 
 add-dom-event-listener@^1.1.0:
   version "1.1.0"
@@ -3596,6 +3596,18 @@ btoa-lite@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/btoa-lite/-/btoa-lite-1.0.0.tgz#337766da15801210fdd956c22e9c6891ab9d0337"
   integrity sha1-M3dm2hWAEhD92VbCLpxokaudAzc=
+
+buble@0.19.6:
+  version "0.19.6"
+  resolved "https://registry.yarnpkg.com/buble/-/buble-0.19.6.tgz#915909b6bd5b11ee03b1c885ec914a8b974d34d3"
+  integrity sha512-9kViM6nJA1Q548Jrd06x0geh+BG2ru2+RMDkIHHgJY/8AcyCs34lTHwra9BX7YdPrZXd5aarkpr/SY8bmPgPdg==
+  dependencies:
+    chalk "^2.4.1"
+    magic-string "^0.25.1"
+    minimist "^1.2.0"
+    os-homedir "^1.0.1"
+    regexpu-core "^4.2.0"
+    vlq "^1.0.0"
 
 buble@^0.19.3:
   version "0.19.7"
@@ -12503,7 +12515,7 @@ regexpu-core@^1.0.0:
     regjsgen "^0.2.0"
     regjsparser "^0.1.4"
 
-regexpu-core@^4.1.3, regexpu-core@^4.5.4:
+regexpu-core@^4.1.3, regexpu-core@^4.2.0, regexpu-core@^4.5.4:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-4.5.4.tgz#080d9d02289aa87fe1667a4f5136bc98a6aebaae"
   integrity sha512-BtizvGtFQKGPUcTy56o3nk1bGRp4SZOTYrDtGNlqCQufptV5IkkLN6Emw+yunAJjzf+C9FQFtvq7IoA3+oMYHQ==
@@ -15104,6 +15116,11 @@ vfile@^3.0.0, vfile@^3.0.1:
     replace-ext "1.0.0"
     unist-util-stringify-position "^1.0.0"
     vfile-message "^1.0.0"
+
+vlq@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vlq/-/vlq-1.0.0.tgz#8101be90843422954c2b13eb27f2f3122bdcc806"
+  integrity sha512-o3WmXySo+oI5thgqr7Qy8uBkT/v9Zr+sRyrh1lr8aWPUkgDWdWt4Nae2WKBrLsocgE8BuWWD0jLc+VW8LeU+2g==
 
 vm-browserify@0.0.4:
   version "0.0.4"
