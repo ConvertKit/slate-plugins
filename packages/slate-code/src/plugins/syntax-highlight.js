@@ -12,7 +12,7 @@ const getContent = token => {
 };
 
 // https://github.com/GitbookIO/slate-edit-code
-const createDecoration = ({ text, textStart, textEnd, start, end, type }) => {
+const createDecoration = ({ text, textStart, textEnd, start, end, data }) => {
   if (start >= textEnd || end <= textStart) {
     return null;
   }
@@ -35,7 +35,8 @@ const createDecoration = ({ text, textStart, textEnd, start, end, type }) => {
       offset: end
     },
     mark: {
-      type
+      type: "code-token",
+      data
     }
   };
 
@@ -48,40 +49,15 @@ const createDecoration = ({ text, textStart, textEnd, start, end, type }) => {
   };
 };
 
-export default () => ({
+export default ({ block, line }) => ({
   renderMark(props, editor, next) {
     const { children, mark, attributes } = props;
 
     switch (mark.type) {
-      case "comment":
+      case "code-token":
+        const type = mark.data.get("type");
         return (
-          <span {...attributes} data-type="comment" style={{ opacity: "0.33" }}>
-            {children}
-          </span>
-        );
-      case "keyword":
-        return (
-          <span
-            {...attributes}
-            data-type="keyword"
-            style={{ fontWeight: "bold" }}
-          >
-            {children}
-          </span>
-        );
-      case "tag":
-        return (
-          <span {...attributes} data-type="tag" style={{ fontWeight: "bold" }}>
-            {children}
-          </span>
-        );
-      case "punctuation":
-        return (
-          <span
-            {...attributes}
-            data-type="punctuation"
-            style={{ opacity: "0.75" }}
-          >
+          <span {...attributes} className={`token ${type}`}>
             {children}
           </span>
         );
@@ -91,12 +67,13 @@ export default () => ({
   },
   decorateNode(node, editor, next) {
     const others = next() || [];
-    if (node.type != "code") return others;
+    if (node.type != block) return others;
 
     const texts = node.getTexts().toArray();
     const string = texts.map(t => t.text).join("\n");
+    const language = node.data.get("language") || "html";
 
-    const grammar = Prism.languages["html"];
+    const grammar = Prism.languages[language];
 
     const tokens = Prism.tokenize(string, grammar);
 
@@ -118,7 +95,9 @@ export default () => ({
               textEnd,
               start: offset,
               end: offset + token.length,
-              type
+              data: {
+                type
+              }
             });
             if (decoration) {
               decorations.push(decoration);
@@ -133,7 +112,7 @@ export default () => ({
               textEnd,
               start: offset,
               end: offset + token.content.length,
-              type: token.type
+              data: { type: token.type }
             });
             if (decoration) {
               decorations.push(decoration);

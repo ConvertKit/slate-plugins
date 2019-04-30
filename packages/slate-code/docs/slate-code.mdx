@@ -50,11 +50,13 @@ function handleKeyDown(event, editor, next) {
     switch (event.key) {
       case 'y':
         event.preventDefault();
-        editor.insertCode({ code: '<h1>Heading 1</h1>'});
+        editor.insertCode({ code: '<h1>Heading 1</h1>', language: "html" });
         break;
       default:
         return next();
     }
+  } else {
+    return next()
   }
 }
 
