@@ -60,10 +60,11 @@ export default (options = {}) => {
   return [
     {
       commands: {
-        insertCode(editor, { code }) {
+        insertCode(editor, { code, language }) {
           editor.insertBlock({
             object: "block",
             type: config.block,
+            data: { language },
             nodes: [
               {
                 object: "block",
@@ -78,10 +79,14 @@ export default (options = {}) => {
         const { node } = props;
         switch (node.type) {
           case config.block:
+            const language = node.data.get("language") || "html";
             return (
-              <div className={classNames.block} {...props.attributes}>
-                {props.children}
-              </div>
+              <pre
+                className={`${classNames.block} language-${language}`}
+                {...props.attributes}
+              >
+                <code className={`language-${language}`}>{props.children}</code>
+              </pre>
             );
           case config.line: {
             return (
@@ -96,7 +101,9 @@ export default (options = {}) => {
       },
       schema
     },
-    ...(config.highlight ? [SyntaxHighlight()] : []),
+    ...(config.highlight
+      ? [SyntaxHighlight({ block: config.block, line: config.line })]
+      : []),
     KeyMap(
       {
         "mod+a": onSelectAll,
