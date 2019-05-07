@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import SyntaxHighlight from "./plugins/syntax-highlight";
 import KeyMap from "@convertkit/slate-keymap";
-// import "./index.css";
+
+const getNextIndent = text => {
+  return Math.max(text.search(/\S/), 0);
+};
 
 export default (options = {}) => {
   const config = {
@@ -21,7 +24,12 @@ export default (options = {}) => {
 
   const onEnter = (event, editor, next) => {
     event.preventDefault();
-    editor.splitBlock().setBlocks(config.line);
+    const indent = getNextIndent(editor.value.startBlock.text);
+    const spaces = " ".repeat(indent);
+    editor
+      .splitBlock()
+      .setBlocks(config.line)
+      .insertText(spaces);
   };
 
   const onTab = (event, editor, next) => {

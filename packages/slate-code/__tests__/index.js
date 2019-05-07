@@ -3,7 +3,6 @@ import h from "../../../shared/hyperscript";
 import SlateTest, { createEvent } from "@convertkit/slate-testing-library";
 
 import Code from "../src";
-import print from "slate-hyperprint";
 
 describe("insertCode", () => {
   it("should insert a code block", () => {
@@ -64,5 +63,43 @@ describe("mod+a", () => {
     expect(editor.value.toJSON({ preserveSelection: true })).toEqual(
       expected.toJSON({ preserveSelection: true })
     );
+  });
+
+  describe("enter", () => {
+    it("should base the indent off the previous indent", () => {
+      const { editor, createValue } = SlateTest({ plugins: Code() });
+
+      editor.setValue(
+        createValue(
+          <code>
+            <code_line>{"<div>"}</code_line>
+            <code_line>
+              {"  <div>"}
+              <cursor />
+            </code_line>
+          </code>
+        )
+      );
+
+      const expected = createValue(
+        <code>
+          <code_line>{"<div>"}</code_line>
+          <code_line>
+            {"  <div>"}
+            <cursor />
+          </code_line>
+          <code_line>
+            {"  "}
+            <cursor />
+          </code_line>
+        </code>
+      );
+
+      editor.run("onKeyDown", createEvent.keyDown({ key: "Enter" }));
+
+      expect(editor.value.toJSON({ preserveSelection: true })).toEqual(
+        expected.toJSON({ preserveSelection: true })
+      );
+    });
   });
 });
