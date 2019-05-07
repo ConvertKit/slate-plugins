@@ -13,6 +13,7 @@ Until packages are at 1.0.0, MINOR version changes may be breaking.
 #### Added
 
 - Support for setting the language for syntax highlighting
+- Basic indent prediction on enter
 
 #### Changed
 
