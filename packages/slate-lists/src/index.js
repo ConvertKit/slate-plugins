@@ -109,6 +109,7 @@ export default (options = {}) => {
       },
       normalizeNode,
       renderBlock,
+      renderNode: renderBlock, // COMPAT: renderNode is removed in slate
       schema
     },
 
