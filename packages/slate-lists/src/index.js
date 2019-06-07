@@ -1,7 +1,7 @@
 import KeyMap from "@convertkit/slate-keymap";
 import createCommands from "./create-commands";
 import createNormalizeNode from "./create-normalize-node";
-import createRenderNode from "./create-render-node";
+import createRenderBlock from "./create-render-block";
 import createSchema from "./create-schema";
 
 export default (options = {}) => {
@@ -96,7 +96,7 @@ export default (options = {}) => {
 
   const schema = createSchema({ blocks });
   const normalizeNode = createNormalizeNode({ blocks });
-  const renderNode = createRenderNode({ blocks, classNames });
+  const renderBlock = createRenderBlock({ blocks, classNames });
 
   return [
     {
@@ -108,7 +108,7 @@ export default (options = {}) => {
         increaseListItemDepth: commands.increaseListItemDepth
       },
       normalizeNode,
-      renderNode,
+      renderBlock,
       schema
     },
 
