@@ -1,0 +1,52 @@
+---
+name: Slate Blockquotes
+route: /plugins/slate-blockquotes
+menu: Plugins
+---
+
+import { Playground, PropsTable } from "docz";
+import Editor from "./test-editor";
+
+# Slate Lists
+
+![](https://img.shields.io/circleci/project/github/ConvertKit/slate-plugins/master.svg?style=flat)
+
+[View on Github](https://github.com/ConvertKit/slate-plugins)
+
+A plugin for blockquotes in SlateJS.
+
+## Try It Out
+
+<Editor />
+
+## Install
+
+```bash
+yarn add @convertkit/slate-lists
+```
+
+## Usage
+
+```jsx
+import { Editor } from "slate-react";
+import Blockquotes from "@convertkit/slate-blockquotes"
+
+const plugins = [Blockquotes({
+  blocks: {
+    blockquote: "blockquote",
+    blockquote_line: "blockquote-line",
+    default: "paragraph"
+  },
+  classNames: {
+    blockquote: "blockquote",
+    blockquote_line: "blockquote-line",
+  }
+})]
+
+const MyEditor = (props) => (
+  <Editor
+    ...
+    plugins={plugins}
+  />
+)
+```
