@@ -1,0 +1,38 @@
+{
+  "name": "@convertkit/slate-blockquotes",
+  "version": "0.0.1",
+  "description": "A plugin for handling block quotes in a Slate editor",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConvertKit/slate-plugins.git"
+  },
+  "scripts": {
+    "test": "library test",
+    "lint": "eslint . --max-warnings=0",
+    "build": "library build"
+  },
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "immutable": "^3.8.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "slate": "^0.44.0",
+    "slate-react": "^0.21.0"
+  },
+  "files": [
+    "dist",
+    "src",
+    "lib",
+    "index.js",
+    "styles.css"
+  ],
+  "devDependencies": {
+    "@convertkit/slate-testing-library": "file:../slate-testing-library"
+  },
+  "dependencies": {
+    "@convertkit/slate-keymap": "file:../slate-keymap"
+  }
+}
