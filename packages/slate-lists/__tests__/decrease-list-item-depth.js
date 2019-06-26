@@ -134,4 +134,26 @@ describe("decreaseListItemDepth", () => {
 
     expect(editor.value).toMatchSlateValue(expected);
   });
+
+  it("should do nothing outside of a list", () => {
+    const { editor, createValue } = SlateTest({ plugins: Lists() });
+
+    editor.setValue(
+      createValue(
+        <paragraph>
+          <cursor />
+        </paragraph>
+      )
+    );
+
+    const expected = createValue(
+      <paragraph>
+        <cursor />
+      </paragraph>
+    );
+
+    editor.decreaseListItemDepth();
+
+    expect(editor.value).toMatchSlateValue(expected);
+  });
 });
