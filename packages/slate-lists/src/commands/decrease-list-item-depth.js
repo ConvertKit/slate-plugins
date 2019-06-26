@@ -4,6 +4,7 @@ export default ({ blocks }, editor) => {
   const { document, startBlock } = editor.value;
 
   const listItem = document.getParent(startBlock.key);
+  if (listItem.type != blocks.list_item) return;
   const list = document.getParent(listItem.key);
   const parentListItem = document.getParent(list.key);
   if (parentListItem.type != blocks.list_item) return;
