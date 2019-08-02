@@ -1,6 +1,6 @@
 import Keymap from "@convertkit/slate-keymap";
 import createCommands from "./create-commands";
-import createRenderNode from "./create-render-node";
+import createRenderBlock from "./create-render-block";
 import createSchema from "./create-schema";
 
 export default (options = {}) => {
@@ -37,14 +37,15 @@ export default (options = {}) => {
   const isBlockquoteLine = editor =>
     editor.value.startBlock.type === blocks.blockquote_line;
 
-  const renderNode = createRenderNode({ blocks, classNames });
+  const renderBlock = createRenderBlock({ blocks, classNames });
   const commands = createCommands({ blocks });
   const schema = createSchema({ blocks });
 
   return [
     {
       commands,
-      renderNode,
+      renderBlock,
+      renderNode: renderBlock, // COMPAT: renderNode is removed in slate
       schema
     },
     Keymap(
