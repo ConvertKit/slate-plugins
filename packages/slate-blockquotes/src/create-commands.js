@@ -1,10 +1,18 @@
 const wrapWithOptions = (fn, options) => (...args) => fn(options, ...args);
 
 const wrapBlockquote = ({ blocks }, editor, options = {}) => {
-  const block = editor.value.startBlock;
+  const rootBlocks = editor.value.document.getRootBlocksAtRange(
+    editor.value.selection
+  );
   editor.withoutNormalizing(() => {
-    editor.wrapBlockByKey(block.key, blocks.blockquote);
-    editor.wrapBlockByKey(block.key, blocks.blockquote_line);
+    if (rootBlocks.size === 1) {
+      editor.wrapBlockByKey(editor.value.startBlock.key, blocks.blockquote);
+      return;
+    }
+    rootBlocks.forEach(block => {
+      editor.wrapBlockByKey(block.key, blocks.blockquote_line);
+    });
+    editor.wrapBlock(blocks.blockquote);
   });
 };
 

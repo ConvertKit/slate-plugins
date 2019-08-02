@@ -34,6 +34,18 @@ export default (options = {}) => {
     return next();
   };
 
+  const onBackspace = (event, editor, next) => {
+    const { selection, startBlock } = editor.value;
+    if (selection.isExpanded) return next();
+    if (selection.start.offset !== 0) return next();
+    if (startBlock.getText() !== "") return next();
+    const parent = editor.value.document.getParent(startBlock.key);
+    if (parent.nodes.size > 1) return next();
+    event.preventDefault();
+    editor.delete();
+    editor.unwrapBlockquote();
+  };
+
   const isBlockquoteLine = editor =>
     editor.value.startBlock.type === blocks.blockquote_line;
 
@@ -49,7 +61,8 @@ export default (options = {}) => {
     },
     Keymap(
       {
-        enter: onEnter
+        enter: onEnter,
+        backspace: onBackspace
       },
       { if: isBlockquoteLine }
     )
