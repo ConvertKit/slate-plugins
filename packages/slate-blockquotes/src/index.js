@@ -26,7 +26,6 @@ export default (options = {}) => {
     if (selection.start.offset === 0 && startBlock.getText() === "") {
       event.preventDefault();
       if (selection.isExpanded) editor.delete();
-      console.log("unwrap");
       editor.unwrapBlockquote();
 
       return;
