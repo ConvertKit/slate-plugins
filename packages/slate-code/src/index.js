@@ -89,12 +89,12 @@ export default (options = {}) => {
           case config.block:
             const language = node.data.get("language") || "html";
             return (
-              <pre
+              <div
                 className={`${classNames.block} language-${language}`}
                 {...props.attributes}
               >
-                <code className={`language-${language}`}>{props.children}</code>
-              </pre>
+                <div className={`language-${language}`}>{props.children}</div>
+              </div>
             );
           case config.line: {
             return (
