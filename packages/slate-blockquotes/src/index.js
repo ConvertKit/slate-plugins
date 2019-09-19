@@ -38,11 +38,9 @@ export default (options = {}) => {
     const { selection, startBlock } = editor.value;
     if (selection.isExpanded) return next();
     if (selection.start.offset !== 0) return next();
-    if (startBlock.getText() !== "") return next();
     const parent = editor.value.document.getParent(startBlock.key);
-    if (parent.nodes.size > 1) return next();
+    if (parent.nodes.first().key !== startBlock.key) return next();
     event.preventDefault();
-    editor.delete();
     editor.unwrapBlockquote();
   };
 
