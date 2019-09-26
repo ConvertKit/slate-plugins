@@ -17,12 +17,14 @@ const wrapBlockquote = ({ blocks }, editor, options = {}) => {
 };
 
 const unwrapBlockquote = ({ blocks }, editor, options = {}) => {
-  const block = editor.value.startBlock;
-  if (block.type == blocks.blockquote_line) {
-    const parent = editor.value.document.getParent(block.key);
+  const startBlock = editor.value.startBlock;
+  if (startBlock.type == blocks.blockquote_line) {
+    const parent = editor.value.document.getParent(startBlock.key);
     editor.withoutNormalizing(() => {
       editor.unwrapBlockByKey(parent.key, { type: blocks.blockquote });
-      editor.setNodeByKey(block.key, { type: blocks.default });
+      parent.nodes.forEach(block => {
+        editor.setNodeByKey(block.key, { type: blocks.default });
+      });
     });
   }
 };
