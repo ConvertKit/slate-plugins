@@ -18,7 +18,7 @@ const wrapBlockquote = ({ blocks }, editor, options = {}) => {
 
 const unwrapBlockquote = ({ blocks }, editor, options = {}) => {
   const startBlock = editor.value.startBlock;
-  if (startBlock.type == blocks.blockquote_line) {
+  if (startBlock.type === blocks.blockquote_line) {
     const parent = editor.value.document.getParent(startBlock.key);
     editor.withoutNormalizing(() => {
       editor.unwrapBlockByKey(parent.key, { type: blocks.blockquote });
