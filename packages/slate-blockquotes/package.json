@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-blockquotes",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A plugin for handling block quotes in a Slate editor",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
