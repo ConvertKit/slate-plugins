@@ -44,7 +44,6 @@ export default ({ blocks }) => {
                 error.node.key,
                 0,
                 Block.create({
-                  object: "block",
                   type: blocks.list_item_child,
                   nodes: [Text.create()]
                 })
