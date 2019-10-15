@@ -1,3 +1,5 @@
+import { Block, Text } from "slate";
+
 export default ({ blocks }) => {
   return {
     blocks: {
@@ -38,10 +40,16 @@ export default ({ blocks }) => {
         normalize: (editor, error) => {
           switch (error.code) {
             case "child_min_invalid":
-              editor.insertNodeByKey(error.node.key, 0, {
-                object: "block",
-                type: blocks.list_item_child
-              });
+              editor.insertNodeByKey(
+                error.node.key,
+                0,
+                Block.create({
+                  object: "block",
+                  type: blocks.list_item_child,
+                  nodes: [Text.create()]
+                })
+              );
+              return;
             case "child_type_invalid":
               editor.wrapBlockByKey(error.child.key, {
                 type: blocks.list_item_child
