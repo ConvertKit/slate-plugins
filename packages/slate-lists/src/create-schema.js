@@ -55,7 +55,7 @@ export default ({ blocks }) => {
               });
               return;
             case "parent_type_invalid":
-              editor.wrapBlock(blocks.unordered_list);
+              editor.wrapBlockByKey(error.node.key, blocks.unordered_list);
               return;
             default:
               return;
