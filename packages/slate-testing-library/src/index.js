@@ -23,9 +23,23 @@ const SlateTest = options => {
     return editor.value;
   };
 
+  const createUnnormalizedValue = children => {
+    const editor = new Editor({
+      normalize: false
+    });
+    const value = html`
+      <value>
+        <document>${children}</document>
+      </value>
+    `;
+
+    editor.setValue(value);
+    return editor.value;
+  };
+
   const editor = new Editor(options);
 
-  return { editor, createValue };
+  return { editor, createValue, createUnnormalizedValue };
 };
 
 const print = value => hyperprint(value, { strict: true });
