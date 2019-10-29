@@ -35,6 +35,9 @@ export default ({ blocks }) => {
         ],
         normalize: (editor, error) => {
           switch (error.code) {
+            case "parent_type_invalid":
+              editor.wrapBlockByKey(error.node.key, blocks.blockquote);
+              return;
             case "child_object_invalid":
               error.child.nodes.forEach((node, index) => {
                 editor.moveNodeByKey(node.key, error.node.key, index);
