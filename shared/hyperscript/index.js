@@ -8,8 +8,12 @@ export default createHyperscript({
     list_item_child: "list-item-child",
     ordered_list: "ordered-list",
     paragraph: "paragraph",
-    unordered_list: "unordered-list"
+    unordered_list: "unordered-list",
+    blockquote: "blockquote",
+    blockquote_line: "blockquote-line"
   },
-  inlines: {},
+  inlines: {
+    link: "link"
+  },
   marks: {}
 });
