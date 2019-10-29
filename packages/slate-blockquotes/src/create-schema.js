@@ -15,13 +15,11 @@ export default ({ blocks }) => {
                 object: "block",
                 type: blocks.blockquote_line
               });
+              return;
             case "child_type_invalid":
               editor.wrapBlockByKey(error.child.key, {
                 type: blocks.blockquote_line
               });
-              return;
-            case "parent_type_invalid":
-              editor.wrapBlock(blocks.blockquote);
               return;
             default:
               return;
