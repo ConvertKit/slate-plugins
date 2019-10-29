@@ -6,7 +6,7 @@ import Blockquotes from "../src";
 
 describe("blockquote", () => {
   describe("child_type_invalid", () => {
-    it("should insert list_item_child", () => {
+    it("should wrap with blockquote_line", () => {
       const { editor, createValue, createUnnormalizedValue } = SlateTest({
         plugins: Blockquotes()
       });
