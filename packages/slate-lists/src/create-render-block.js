@@ -5,13 +5,21 @@ export default ({ blocks, classNames }) => (props, editor, next) => {
   switch (node.type) {
     case blocks.unordered_list:
       return (
-        <ul className={classNames.unordered_list} {...props.attributes}>
+        <ul
+          className={classNames.unordered_list}
+          {...props.attributes}
+          style="list-style-position: inside;"
+        >
           {props.children}
         </ul>
       );
     case blocks.ordered_list: {
       return (
-        <ol className={classNames.ordered_list} {...props.attributes}>
+        <ol
+          className={classNames.ordered_list}
+          {...props.attributes}
+          style="list-style-position: inside;"
+        >
           {props.children}
         </ol>
       );
