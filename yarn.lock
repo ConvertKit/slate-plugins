@@ -1014,9 +1014,9 @@
     minimist "^1.2.0"
 
 "@convertkit/slate-code@file:packages/slate-code":
-  version "0.0.12"
+  version "0.1.2"
   dependencies:
-    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-code-0.0.12-4a7a9d0d-1794-4c56-bd4e-627fb245a558-1553118316899/node_modules/@convertkit/slate-keymap"
+    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v6/npm-@convertkit-slate-code-0.1.2-3ce18885-b2b0-4c10-91bd-a70634b189c3-1585723870908/node_modules/@convertkit/slate-keymap"
     prismjs "^1.15.0"
 
 "@convertkit/slate-htm@file:packages/slate-htm":
@@ -1025,20 +1025,20 @@
     htm "^2.0.0"
     slate-hyperscript "^0.11.25"
 
-"@convertkit/slate-keymap@file:packages/slate-keymap":
-  version "0.1.8"
+"@convertkit/slate-keymap@^0.1.9", "@convertkit/slate-keymap@file:packages/slate-keymap":
+  version "0.1.9"
   dependencies:
     is-hotkey "^0.1.4"
 
 "@convertkit/slate-lists@file:packages/slate-lists":
-  version "0.2.2"
+  version "0.2.7"
   dependencies:
-    "@convertkit/slate-keymap" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-lists-0.2.2-226553d2-0461-4bbd-a418-b19763f48743-1553118316914/node_modules/@convertkit/slate-keymap"
+    "@convertkit/slate-keymap" "^0.1.9"
 
 "@convertkit/slate-testing-library@file:packages/slate-testing-library":
-  version "0.0.8"
+  version "0.0.9"
   dependencies:
-    "@convertkit/slate-htm" "file:../../Library/Caches/Yarn/v4/npm-@convertkit-slate-testing-library-0.0.8-3b5139b4-a54d-4724-8d35-8183dcf9265d-1553118316915/node_modules/@convertkit/slate-htm"
+    "@convertkit/slate-htm" "file:../../Library/Caches/Yarn/v6/npm-@convertkit-slate-testing-library-0.0.9-c48e978d-f8d7-45df-8566-039a079ccf4d-1585723873064/node_modules/@convertkit/slate-htm"
     htm "^2.0.0"
     jest-diff "^24.0.0"
     slate-hyperprint "^2.3.0"
