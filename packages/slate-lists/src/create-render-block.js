@@ -8,7 +8,7 @@ export default ({ blocks, classNames }) => (props, editor, next) => {
         <ul
           className={classNames.unordered_list}
           {...props.attributes}
-          style="list-style-position: inside;"
+          style={{ listStylePosition: "inside" }}
         >
           {props.children}
         </ul>
@@ -18,7 +18,7 @@ export default ({ blocks, classNames }) => (props, editor, next) => {
         <ol
           className={classNames.ordered_list}
           {...props.attributes}
-          style="list-style-position: inside;"
+          style={{ listStylePosition: "inside" }}
         >
           {props.children}
         </ol>
