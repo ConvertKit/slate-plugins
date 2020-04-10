@@ -2,21 +2,25 @@
 # yarn lockfile v1
 
 
-"@convertkit/slate-htm@file:../slate-htm":
+"@convertkit/slate-htm@^0.0.3":
   version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@convertkit/slate-htm/-/slate-htm-0.0.3.tgz#a596c3967531707c25f6abd6c0a684e6dbb8c385"
+  integrity sha512-V51pZJQ0a2xjvyyW6V5xUkticY6ecqw+Jm9CqBv8pU8MYmfEkT2NaqcxtoQ6u/3Rnh9k6NBX2GSs3S2EFDmssg==
   dependencies:
     htm "^2.0.0"
     slate-hyperscript "^0.11.25"
 
 "@convertkit/slate-keymap@file:../slate-keymap":
-  version "0.1.8"
+  version "0.1.9"
   dependencies:
     is-hotkey "^0.1.4"
 
-"@convertkit/slate-testing-library@file:../slate-testing-library":
-  version "0.0.8"
+"@convertkit/slate-testing-library@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@convertkit/slate-testing-library/-/slate-testing-library-0.0.9.tgz#3e01def53b1dd974728c9f7ff743c155926a1ea0"
+  integrity sha512-QnFWWLoMo4eawp1ucZpRkH5FFjx6U5FIdQKzs/vDUDIqhql2NcL54QVbyLeN2K4j1s+Kgkfo9NhKrDIk0zhXbg==
   dependencies:
-    "@convertkit/slate-htm" "file:../../../../Library/Caches/Yarn/v4/npm-@convertkit-slate-testing-library-0.0.8-3a21900d-4898-42bd-9857-d80c448fbe62-1568276251049/node_modules/@convertkit/slate-htm"
+    "@convertkit/slate-htm" "^0.0.3"
     htm "^2.0.0"
     jest-diff "^24.0.0"
     slate-hyperprint "^2.3.0"
