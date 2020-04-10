@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.6.0
+      - image: circleci/node:10.19.0
     working_directory: ~/repo
     steps:
       - checkout
@@ -10,13 +10,13 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
 
       - run: yarn install
       - run: yarn build
       # IDK what I'm doing, but this re-installs the packages after they're built so we have the dist/ directory.
       - run: rm -r node_modules/
       - run: yarn install
+      - run: yarn run lerna exec yarn
       - save_cache:
           paths:
             - node_modules

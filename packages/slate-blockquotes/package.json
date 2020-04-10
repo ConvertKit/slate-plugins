@@ -30,7 +30,7 @@
     "styles.css"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "file:../slate-testing-library"
+    "@convertkit/slate-testing-library": "^0.0.9"
   },
   "dependencies": {
     "@convertkit/slate-keymap": "file:../slate-keymap"
