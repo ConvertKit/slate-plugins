@@ -1,6 +1,6 @@
 {
   "name": "@convertkit/slate-blockquotes",
-  "version": "0.0.9",
+  "version": "0.0.10-alpha.0",
   "description": "A plugin for handling block quotes in a Slate editor",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -30,7 +30,7 @@
     "styles.css"
   ],
   "devDependencies": {
-    "@convertkit/slate-testing-library": "^0.0.9"
+    "@convertkit/slate-testing-library": "^0.0.10"
   },
   "dependencies": {
     "@convertkit/slate-keymap": "file:../slate-keymap"
