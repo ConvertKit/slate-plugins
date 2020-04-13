@@ -1,4 +1,6 @@
-# ConvertKit Slate Plugins
+# ConvertKit Slate Plugins - obsoleted
+
+_Please note that due to underlying changes to the SlateJS editor, this repo may have incompatibilities with the current Slate API. There are no plans to update these to the current version._
 
 ![](https://img.shields.io/circleci/project/github/ConvertKit/slate-plugins/master.svg?style=flat)
 
