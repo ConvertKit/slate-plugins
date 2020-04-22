@@ -11,6 +11,9 @@ export default ({ blocks }, editor, options = {}) => {
   if (sameType) {
     editor.unwrapList();
   } else {
-    editor.setNodeByKey(list.key, type);
+    editor.setNodeByKey(
+      list.key,
+      Object.assign({}, options.nodeProperties, { type })
+    );
   }
 };
