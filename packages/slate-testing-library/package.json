@@ -9,6 +9,11 @@
     "lint": "eslint . --max-warnings=0",
     "build": "library build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConvertKit/slate-plugins.git",
+    "directory": "packages/slate-testing-library"
+  },
   "author": "",
   "license": "MIT",
   "peerDependencies": {
